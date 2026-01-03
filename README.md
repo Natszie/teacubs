@@ -2,7 +2,7 @@
 
 A modern, interactive cafe website designed for students and dreamers.  Features a fully functional shopping cart system, menu filtering, and beautiful animations.  Built with vanilla HTML, CSS, and JavaScript. 
 
-🌐 **Live Demo:** [View Website](https://natszie.github.io/teacubs-cafe/)
+🌐 **Live Demo:** [View Website](https://natszie.github.io/teacubs/)
 
 ![TeaCubs Cafe](images/logo.jpg)
 
@@ -530,5 +530,6 @@ Perfect for learning:
 *Your cozy corner for productivity and peace since 2020*
 
 Last Updated: January 2026
+
 
 🎉 **Happy Hour:  4PM-7PM Daily - Buy 2 Get 1 FREE!**
