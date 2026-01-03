@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeaCubs Cafe - Your Cozy Study Haven Since 2020</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="TeaCubs Cafe" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#promos" class="nav-link">Promos</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#delivery" class="nav-link">Delivery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- UPDATED: Cart Button -->
+            <button class="cart-btn" id="cartBtn">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="#order" class="order-btn">Order Now</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- NEW: Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>🛒 Your Order</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-body" id="cartBody">
+                <div class="empty-cart" id="emptyCart">
+                    <div class="empty-cart-icon">🍵</div>
+                    <p>Your cart is empty</p>
+                    <small>Add some delicious items to get started!</small>
+                </div>
+                <div class="cart-items" id="cartItems"></div>
+            </div>
+            <div class="cart-footer" id="cartFooter">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span class="subtotal" id="subtotal">₱0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <span id="deliveryFee">₱120</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span class="total-price" id="totalPrice">₱120</span>
+                    </div>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="floating-elements">
+                <span class="float-icon">☕</span>
+                <span class="float-icon">📚</span>
+                <span class="float-icon">🍰</span>
+                <span class="float-icon">🌿</span>
+                <span class="float-icon">✨</span>
+                <span class="float-icon">🎄</span>
+            </div>
+            <div class="hero-badge">Since 2020</div>
+            <h1 class="hero-title">Welcome to TeaCubs Cafe</h1>
+            <p class="hero-subtitle">Where Study Meets Serenity</p>
+            <p class="hero-description">Your cozy corner for productivity, delicious brews, and sweet moments</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="cta-button primary">Explore Menu</a>
+                <a href="#promos" class="cta-button secondary">View Promos</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Discover TeaCubs</span>
+                <h2 class="section-title">A Haven for Students & Dreamers</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">📖</div>
+                    </div>
+                    <h3>Study Hub</h3>
+                    <p>Quiet corners, comfortable seating, and free WiFi make TeaCubs the perfect study sanctuary for students</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">☕</div>
+                    </div>
+                    <h3>Artisan Brews</h3>
+                    <p>From classic teas to specialty coffee, each cup is crafted with care and quality ingredients</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">🥐</div>
+                    </div>
+                    <h3>Fresh Delights</h3>
+                    <p>Indulge in our freshly baked pastries and hearty meals, perfect for any time of day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promos" class="promos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Special Offers</span>
+                <h2 class="section-title">Happy Hour Promos</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Don't miss our exclusive daily deals! </p>
+            </div>
+            
+            <div class="promo-hero">
+                <div class="promo-badge">🎉 LIMITED TIME OFFER</div>
+                <div class="promo-main">
+                    <div class="promo-image">
+                        <img src="images/promo-drinks.jpg" alt="Happy Hour Drinks">
+                    </div>
+                    <div class="promo-details">
+                        <h3>Happy Hour Set</h3>
+                        <div class="promo-deal">
+                            <span class="deal-badge">2+1</span>
+                            <p class="deal-text">Buy 2 Get 1 FREE! </p>
+                        </div>
+                        <div class="promo-time">
+                            <span class="time-icon">⏰</span>
+                            <p>Every Day:  4PM - 7PM</p>
+                        </div>
+                        <p class="promo-description">
+                            Enjoy our signature drinks during happy hour!  Choose any 2 drinks from our selection 
+                            and get a third one absolutely free.  Perfect for study sessions with friends! 
+                        </p>
+                        <ul class="promo-features">
+                            <li>✓ Free drink with every meal</li>
+                            <li>✓ Available for dine-in and takeout</li>
+                        </ul>
+                        <a href="#menu" class="cta-button primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cafe Gallery -->
+            <div class="cafe-gallery">
+                <h3>Experience Our Cozy Space</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item featured">
+                        <img src="images/cafe-interior.jpg" alt="TeaCubs Cafe Interior">
+                        <div class="gallery-overlay">
+                            <p>Comfortable Study Areas</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">☕</div>
+                        <p>Artisan Drinks</p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">📚</div>
+                        <p>Library Vibes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What We Serve</span>
+                <h2 class="section-title">Our Menu</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="tab-button active" data-tab="brews">
+                    <span class="tab-icon">☕</span>
+                    <span>Brews</span>
+                </button>
+                <button class="tab-button" data-tab="pastries">
+                    <span class="tab-icon">🥐</span>
+                    <span>Pastries</span>
+                </button>
+                <button class="tab-button" data-tab="meals">
+                    <span class="tab-icon">🍽️</span>
+                    <span>Meals</span>
+                </button>
+            </div>
+
+            <!-- Brews -->
+            <div class="menu-content active" id="brews">
+                <div class="menu-grid">
+                    <div class="menu-item" data-id="1" data-name="Honey Lavender Latte" data-price="165" data-emoji="☕">
+                        <div class="menu-item-img">☕</div>
+                        <div class="menu-item-content">
+                            <h3>Honey Lavender Latte</h3>
+                            <p>Creamy espresso with lavender syrup and local honey</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱165</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="2" data-name="Matcha Cloud" data-price="180" data-emoji="🍵">
+                        <div class="menu-item-img">🍵</div>
+                        <div class="menu-item-content">
+                            <h3>Matcha Cloud</h3>
+                            <p>Premium matcha with oat milk and vanilla foam</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱180</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="3" data-name="Earl Grey Supreme" data-price="135" data-emoji="🫖">
+                        <div class="menu-item-img">🫖</div>
+                        <div class="menu-item-content">
+                            <h3>Earl Grey Supreme</h3>
+                            <p>Classic bergamot tea with a modern twist</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱135</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="4" data-name="Brown Sugar Boba" data-price="175" data-emoji="🧋">
+                        <div class="menu-item-img">🧋</div>
+                        <div class="menu-item-content">
+                            <h3>Brown Sugar Boba</h3>
+                            <p>Rich brown sugar milk tea with chewy pearls</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱175</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="5" data-name="Caramel Macchiato" data-price="160" data-emoji="☕">
+                        <div class="menu-item-img">☕</div>
+                        <div class="menu-item-content">
+                            <h3>Caramel Macchiato</h3>
+                            <p>Espresso with vanilla and caramel drizzle</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱160</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="6" data-name="Berry Bliss Tea" data-price="145" data-emoji="🍓">
+                        <div class="menu-item-img">🍓</div>
+                        <div class="menu-item-content">
+                            <h3>Berry Bliss Tea</h3>
+                            <p>Herbal infusion with fresh berries</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱145</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastries -->
+            <div class="menu-content" id="pastries">
+                <div class="menu-grid">
+                    <div class="menu-item" data-id="7" data-name="Butter Croissant" data-price="105" data-emoji="🥐">
+                        <div class="menu-item-img">🥐</div>
+                        <div class="menu-item-content">
+                            <h3>Butter Croissant</h3>
+                            <p>Flaky, buttery layers baked to golden perfection</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱105</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="8" data-name="Matcha Cheesecake" data-price="195" data-emoji="🍰">
+                        <div class="menu-item-img">🍰</div>
+                        <div class="menu-item-content">
+                            <h3>Matcha Cheesecake</h3>
+                            <p>Creamy cheesecake with matcha swirl</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱195</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="9" data-name="Blueberry Muffin" data-price="120" data-emoji="🧁">
+                        <div class="menu-item-img">🧁</div>
+                        <div class="menu-item-content">
+                            <h3>Blueberry Muffin</h3>
+                            <p>Moist muffin bursting with fresh blueberries</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱120</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="10" data-name="Double Chocolate Cookie" data-price="98" data-emoji="🍪">
+                        <div class="menu-item-img">🍪</div>
+                        <div class="menu-item-content">
+                            <h3>Double Chocolate Cookie</h3>
+                            <p>Chewy cookie with dark and milk chocolate</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱98</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="11" data-name="Apple Cinnamon Tart" data-price="165" data-emoji="🥧">
+                        <div class="menu-item-img">🥧</div>
+                        <div class="menu-item-content">
+                            <h3>Apple Cinnamon Tart</h3>
+                            <p>Spiced apples in a buttery pastry crust</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱165</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="12" data-name="Honey Glazed Donut" data-price="115" data-emoji="🍩">
+                        <div class="menu-item-img">🍩</div>
+                        <div class="menu-item-content">
+                            <h3>Honey Glazed Donut</h3>
+                            <p>Soft donut with sweet honey glaze</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱115</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meals -->
+            <div class="menu-content" id="meals">
+                <div class="menu-grid">
+                    <div class="menu-item" data-id="13" data-name="Garden Fresh Salad" data-price="285" data-emoji="🥗">
+                        <div class="menu-item-img">🥗</div>
+                        <div class="menu-item-content">
+                            <h3>Garden Fresh Salad</h3>
+                            <p>Mixed greens, quinoa, and citrus vinaigrette</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱285</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="14" data-name="Turkey Avocado Panini" data-price="325" data-emoji="🥪">
+                        <div class="menu-item-img">🥪</div>
+                        <div class="menu-item-content">
+                            <h3>Turkey Avocado Panini</h3>
+                            <p>Grilled sandwich with pesto and fresh mozzarella</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱325</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="15" data-name="Creamy Pesto Pasta" data-price="345" data-emoji="🍝">
+                        <div class="menu-item-img">🍝</div>
+                        <div class="menu-item-content">
+                            <h3>Creamy Pesto Pasta</h3>
+                            <p>Penne with basil pesto and cherry tomatoes</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱345</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="16" data-name="Mediterranean Wrap" data-price="295" data-emoji="🥙">
+                        <div class="menu-item-img">🥙</div>
+                        <div class="menu-item-content">
+                            <h3>Mediterranean Wrap</h3>
+                            <p>Hummus, falafel, and fresh vegetables</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱295</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="17" data-name="Tomato Basil Soup" data-price="255" data-emoji="🍲">
+                        <div class="menu-item-img">🍲</div>
+                        <div class="menu-item-content">
+                            <h3>Tomato Basil Soup</h3>
+                            <p>Creamy soup with grilled cheese croutons</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱255</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-id="18" data-name="All-Day Breakfast Bowl" data-price="310" data-emoji="🍳">
+                        <div class="menu-item-img">🍳</div>
+                        <div class="menu-item-content">
+                            <h3>All-Day Breakfast Bowl</h3>
+                            <p>Eggs, avocado, hash browns, and toast</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₱310</span>
+                                <button class="add-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery" class="delivery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Fast & Fresh</span>
+                <h2 class="section-title">Delivery Service</h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Enjoy TeaCubs from the comfort of your home or dorm! </p>
+            </div>
+            <div class="delivery-content">
+                <div class="delivery-hero">
+                    <div class="delivery-icon">🚚</div>
+                    <h3>We Deliver to Your Doorstep</h3>
+                    <p>Fast, reliable delivery service available daily</p>
+                </div>
+                <div class="delivery-features">
+                    <div class="delivery-feature">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Quick Delivery</h4>
+                        <p>Average delivery time: 30-45 minutes</p>
+                    </div>
+                    <div class="delivery-feature">
+                        <div class="feature-icon">📦</div>
+                        <h4>Careful Packaging</h4>
+                        <p>Your items arrive fresh and secure</p>
+                    </div>
+                    <div class="delivery-feature">
+                        <div class="feature-icon">💳</div>
+                        <h4>Easy Payment</h4>
+                        <p>Cash, card, GCash, or PayMaya accepted</p>
+                    </div>
+                </div>
+                <div class="delivery-cta">
+                    <div class="delivery-info">
+                        <h4>Minimum Order: ₱450</h4>
+                        <p>Free delivery on orders over ₱900</p>
+                        <p>Delivery fee: ₱120</p>
+                    </div>
+                    <a href="#order" class="cta-button primary large">Order for Delivery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambiance Section -->
+    <section id="ambiance" class="ambiance">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Experience</span>
+                <h2 class="section-title">The TeaCubs Atmosphere</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="ambiance-grid">
+                <div class="ambiance-card">
+                    <div class="ambiance-icon">🕯️</div>
+                    <h3>Cozy Atmosphere</h3>
+                    <p>Warm lighting and comfortable seating create the perfect ambiance for studying or relaxing</p>
+                </div>
+                <div class="ambiance-card">
+                    <div class="ambiance-icon">🎵</div>
+                    <h3>Ambient Music</h3>
+                    <p>Carefully curated playlists of lo-fi and acoustic melodies enhance your focus</p>
+                </div>
+                <div class="ambiance-card">
+                    <div class="ambiance-icon">📶</div>
+                    <h3>Free WiFi</h3>
+                    <p>High-speed internet connection and plenty of power outlets for all your devices</p>
+                </div>
+                <div class="ambiance-card">
+                    <div class="ambiance-icon">🌿</div>
+                    <h3>Green Space</h3>
+                    <p>Indoor plants and natural elements bring a breath of fresh air to your study session</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Visit Us</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>123 Study Lane<br>University District<br>Your City, Philippines</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <h3>Hours</h3>
+                        <p>Monday - Friday: 7am - 10pm<br>Saturday: 8am - 11pm<br>Sunday: 8am - 9pm</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <h3>Contact</h3>
+                        <p>Phone: (02) 8123-4567<br>Email:  hello@teacubs.com<br>Instagram: @teacubscafe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="TeaCubs Cafe" class="footer-logo-img">
+                        <p class="footer-text">Your cozy corner for productivity and peace</p>
+                        <p class="footer-since">Established in 2020</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Quick Links</h4>
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#promos">Promos</a>
+                            <a href="#menu">Menu</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Services</h4>
+                            <a href="#delivery">Delivery</a>
+                            <a href="#order">Order Online</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Follow Us</h4>
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; 2025 TeaCubs Cafe. All rights reserved.</p>
+                    <div class="footer-badges">
+                        <span>🎉 Happy Hour:  4PM-7PM Daily</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
